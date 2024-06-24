@@ -14,7 +14,7 @@ This Streamlit application allows users to interact with various Large Language 
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/streamlit-llm-app.git
+   git clone https://github.com/nitingopi/streamlit_testcase_app.git
    cd streamlit-llm-app
    ```
 
@@ -52,7 +52,7 @@ This Streamlit application allows users to interact with various Large Language 
    - **Center:** Enter the JIRA ID and any additional context, then click the "Generate" button to generate test cases.
    - **Below the Generate Button:** View the generated test cases in a table.
    - **Export to Excel:** Click to export the test cases to an Excel file.
-   - **Generate test cases in JIRA:** Click to create new JIRA issues with the generated test cases.
+   - **Create test cases in JIRA:** Click to create new JIRA issues with the generated test cases.
 
 ## Project Structure
 
