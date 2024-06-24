@@ -1,6 +1,19 @@
 from strategies.base_strategy import LLMStrategy
+import google.generativeai as genai
+from config.config import GEMINI_API_KEY
 
 class GeminiStrategy(LLMStrategy):
+    def __init__(self) -> None:
+        genai.configure(api_key=GEMINI_API_KEY)
+
+
     def get_response(self, prompt: str) -> str:
         # Implement the Gemini API call here
-        return "Response from Gemini for prompt: " + prompt
+        model = genai.GenerativeModel("gemini-pro")
+        config = {
+        "temperature": 0.9,
+        "top_p": 1
+        }
+        print(f"{GEMINI_API_KEY=}")
+        output = model.generate_content(prompt, generation_config=config )
+        return output

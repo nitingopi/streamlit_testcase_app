@@ -1,15 +1,15 @@
 import requests
 from config.config import JIRA_API_TOKEN, JIRA_BASE_URL
 
-def get_jira_ticket_description(jira_id: str) -> str:
-    url = f"{JIRA_BASE_URL}/rest/api/2/issue/{jira_id}"
+def get_jira_ticket_response(jira_id: str) -> str:
+    url = f"{JIRA_BASE_URL}/rest/api/3/issue/{jira_id}"
     headers = {
-        "Authorization": f"Bearer {JIRA_API_TOKEN}",
+        "Authorization": f"Basic {JIRA_API_TOKEN}",
         "Content-Type": "application/json"
     }
     response = requests.get(url, headers=headers)
     response.raise_for_status()
-    return response.json()["fields"]["description"]
+    return response.json()
 
 def create_jira_issues(test_cases: list):
     url = f"{JIRA_BASE_URL}/rest/api/2/issue/bulk"
