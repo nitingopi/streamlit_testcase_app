@@ -11,9 +11,8 @@ class GeminiStrategy(LLMStrategy):
         # Implement the Gemini API call here
         model = genai.GenerativeModel("gemini-pro")
         config = {
-        "temperature": 0.9,
+        "temperature": 0,
         "top_p": 1
         }
-        print(f"{GEMINI_API_KEY=}")
         output = model.generate_content(prompt, generation_config=config )
         return output
